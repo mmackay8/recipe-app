@@ -1,8 +1,5 @@
 package com.bignerdranch.android.groceries.model
 
-class Recipe {
-    var name = ""
-    var steps = null
-    var temp = null
-    var pic = null
-}
+import android.media.Image
+
+class Recipe(var name: String, var steps: List<String>, var temp: Int, var desc: String /*, var pic: Image*/)
