@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bignerdranch.android.groceries.R
@@ -32,8 +31,8 @@ class HomeFragment : Fragment() {
         )
 
         val root = inflater.inflate(R.layout.fragment_home, container, false)
-        root!!.home_rv.layoutManager = LinearLayoutManager(context)
         root!!.home_rv.adapter = RecipeAdapter(recipes)
+        root.home_rv.layoutManager = LinearLayoutManager(context)
 
 
 
