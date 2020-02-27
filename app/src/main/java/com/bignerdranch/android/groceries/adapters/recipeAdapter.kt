@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bignerdranch.android.groceries.R
 import com.bignerdranch.android.groceries.model.Recipe
@@ -14,6 +15,9 @@ class RecipeAdapter(private val myDataset: List<Recipe>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeVH {
         val layout = LayoutInflater.from(parent.context)
             .inflate(R.layout.recipe_rv, parent, false)
+        layout.setOnClickListener{
+            Toast.makeText(parent.context, "CLICKED!!", Toast.LENGTH_SHORT).show()
+        }
         return RecipeVH(layout)
     }
 
@@ -24,7 +28,10 @@ class RecipeAdapter(private val myDataset: List<Recipe>) :
     override fun onBindViewHolder(holder: RecipeVH, position: Int) {
         val recipe = myDataset.get(position)
         holder.recipeNameTV.text = recipe.name
-        holder.checkBox.isActivated = false
+        holder.checkBox.isActivated = recipe.favorite
+        holder.checkBox.setOnCheckedChangeListener { buttonView, isChecked ->
+            recipe.favorite = isChecked
+        }
         holder.reciptDescTV.text = recipe.desc
 
     }

@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bignerdranch.android.groceries.R
 import com.bignerdranch.android.groceries.adapters.RecipeAdapter
+import com.bignerdranch.android.groceries.model.Ingredient
 import com.bignerdranch.android.groceries.model.Recipe
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -25,9 +26,11 @@ class HomeFragment : Fragment() {
     ): View? {
 
         val recipes = listOf(
-            Recipe("Mac & Cheese", listOf(), 0, "This is the descriptions for Mac And Cheese"),
-            Recipe("Chocolate Chip Cookies", listOf(), 325, "This recipe is for the best CCC. Melt in your mouth."),
-            Recipe("Popcorn", listOf(), 250, "Pop it!")
+            Recipe("Mac & Cheese",
+                listOf(Ingredient("Cheese", 2, "cups"), Ingredient("Milk", 3/4, "cups"), Ingredient("Butter", 3, "tablespoon")),
+                listOf("Boil some noodles", "Drain the noodles", "Add some milk, cheese, and butter", "MORE CHEESE"), 0, "This is the descriptions for Mac And Cheese"),
+            Recipe("Chocolate Chip Cookies", listOf(), listOf(), 325, "This recipe is for the best CCC. Melt in your mouth."),
+            Recipe("Popcorn", listOf(), listOf(), 250, "Pop it!")
         )
 
         val root = inflater.inflate(R.layout.fragment_home, container, false)
