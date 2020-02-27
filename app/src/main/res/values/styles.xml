@@ -3,9 +3,53 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">#086564</item>
+        <item name="colorPrimaryDark">#17828d</item>
+        <item name="colorAccent">#9ba55c</item>
     </style>
+
+    <style name="bigTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">22dp</item>
+    </style>
+
+    <style name="toothbrush" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#9eb8b8</item>
+        <item name="colorPrimaryDark">#d0ffe6</item>
+        <item name="colorAccent">#c0d6c0</item>
+        <item name="android:colorBackground">#f5f6e5</item>
+    </style>
+
+    <style name="greengreengrass" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#086564</item>
+        <item name="colorPrimaryDark">#17828d</item>
+        <item name="colorAccent">#5a8583</item>
+        <item name="android:colorBackground">#9ba55c</item>
+    </style>
+
+    <style name="action_executivos" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#efa885</item>
+        <item name="colorPrimaryDark">#5583a6</item>
+        <item name="colorAccent">#f6c270</item>
+        <item name="android:colorBackground">#f6f1ee</item>
+    </style>
+
+    <style name="wine" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#047495</item>
+        <item name="colorPrimaryDark">#521038</item>
+        <item name="colorAccent">#98dcf3</item>
+        <item name="android:colorBackground">#beb6ae</item>
+    </style>
+
+    <style name="charter_house" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#518396</item>
+        <item name="colorPrimaryDark">#696863</item>
+        <item name="colorAccent">#7bbf6c</item>
+        <item name="android:colorBackground">#f3f4ee</item>
+    </style>
+
+
+
+
+
 
 </resources>
