@@ -29,7 +29,7 @@ class RecipeAdapter(private val myDataset: List<Recipe>) :
         val recipe = myDataset.get(position)
         holder.recipeNameTV.text = recipe.name
         holder.checkBox.isActivated = recipe.favorite
-        holder.checkBox.setOnCheckedChangeListener { buttonView, isChecked ->
+        holder.checkBox.setOnCheckedChangeListener { _, isChecked ->
             recipe.favorite = isChecked
         }
         holder.reciptDescTV.text = recipe.desc
