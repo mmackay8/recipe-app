@@ -1,25 +1,33 @@
 package com.bignerdranch.android.groceries.adapters
 
+import android.app.PendingIntent.getActivity
+import android.content.Context
+import android.content.Intent
+import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.AdapterView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.bignerdranch.android.groceries.MainActivity
 import com.bignerdranch.android.groceries.R
+import com.bignerdranch.android.groceries.RecipeDetails
 import com.bignerdranch.android.groceries.model.Recipe
+import com.bignerdranch.android.groceries.ui.DetailsFragment
 import kotlinx.android.synthetic.main.recipe_rv.view.*
 
-class RecipeAdapter(private val myDataset: List<Recipe>) :
-        RecyclerView.Adapter<RecipeAdapter.RecipeVH>() {
+class RecipeAdapter(private val myDataset: List<Recipe>, val context: Context) :
+        RecyclerView.Adapter<RecipeAdapter.RecipeVH>(){
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeVH {
         val layout = LayoutInflater.from(parent.context)
             .inflate(R.layout.recipe_rv, parent, false)
-        layout.setOnClickListener{
-            Toast.makeText(parent.context, "CLICKED!!", Toast.LENGTH_SHORT).show()
-        }
-        return RecipeVH(layout)
+        return RecipeVH(layout, context)
     }
+
 
     override fun getItemCount(): Int {
         return myDataset.size
@@ -36,9 +44,23 @@ class RecipeAdapter(private val myDataset: List<Recipe>) :
 
     }
 
-    class RecipeVH(var view: View) : RecyclerView.ViewHolder(view){
+    class RecipeVH(var view: View, val context:Context) : RecyclerView.ViewHolder(view){
         val recipeNameTV = view.recipe_name
         val checkBox = view.checkBox
         val reciptDescTV = view.recipe_desc
+
+        fun bind(recipe: Recipe, clickListener: AdapterView.OnItemClickListener){
+            recipeNameTV.text = recipe.name
+            reciptDescTV.text = recipe.desc
+            itemView.setOnClickListener{
+                val intent = Intent(context, RecipeDetails::class.java)
+                startActivity(intent)
+
+
+            }
+
+        }
     }
+
 }
+

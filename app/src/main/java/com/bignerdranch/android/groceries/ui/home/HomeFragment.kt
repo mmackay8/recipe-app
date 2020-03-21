@@ -25,6 +25,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        var onItemClickListener: View.OnClickListener
         val recipes = listOf(
             Recipe("Mac & Cheese",
                 listOf(Ingredient("Cheese", 2, "cups"), Ingredient("Milk", 3/4, "cups"), Ingredient("Butter", 3, "tablespoon")),
@@ -34,14 +35,12 @@ class HomeFragment : Fragment() {
         )
 
         val root = inflater.inflate(R.layout.fragment_home, container, false)
-        root!!.home_rv.adapter = RecipeAdapter(recipes)
+        root!!.home_rv.adapter = RecipeAdapter(recipes, context)
         root.home_rv.layoutManager = LinearLayoutManager(context)
 
 
-
-
         return root
-        }
+    }
 
 
 /*
