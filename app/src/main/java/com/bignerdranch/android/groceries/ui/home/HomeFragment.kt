@@ -35,7 +35,7 @@ class HomeFragment : Fragment() {
         )
 
         val root = inflater.inflate(R.layout.fragment_home, container, false)
-        root!!.home_rv.adapter = RecipeAdapter(recipes, context)
+        root!!.home_rv.adapter = RecipeAdapter(recipes, context!!)
         root.home_rv.layoutManager = LinearLayoutManager(context)
 
 

@@ -54,8 +54,6 @@ class RecipeAdapter(private val myDataset: List<Recipe>, val context: Context) :
             reciptDescTV.text = recipe.desc
             itemView.setOnClickListener{
                 val intent = Intent(context, RecipeDetails::class.java)
-                startActivity(intent)
-
 
             }
 

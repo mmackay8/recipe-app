@@ -17,7 +17,7 @@ class DetailsFragment (val recipe:Recipe) : Fragment () {
         savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_recipe_details, container, false)
-        root.recipe_name_details.text = recipeName
+        root.recipe_name_details.text = recipe.name
         return root
         //super.onCreateView(inflater, container, savedInstanceState)
 
